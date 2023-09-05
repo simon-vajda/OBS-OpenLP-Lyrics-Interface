@@ -1,0 +1,14 @@
+{
+  "name": "OBS-OpenLP Kontroller",
+  "short_name": "OBS-OpenLP Kontroller",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#212529",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS-OpenLP Kontroller</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font/bootstrap-icons.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png">
+    <script src="index.js" defer></script>
+    <style>
+        .input-group>input {
+            width: 5rem !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-3 text-center">
+        <div class="row justify-content-sm-center gx-3 gy-4">
+            <div class="col-12 col-md-auto">
+                <div id="nextLines1" class="input-group">
+                    <button type="button" class="btn btn-light">
+                        <i class="bi bi-caret-right-fill"></i>
+                        Következő sorok
+                    </button>
+                    <input type="number" class="form-control border-light" min="1" max="999" size="3">
+                </div>
+                <div id="nextLines2" class="input-group mt-2">
+                    <button type="button" class="btn btn-light">
+                        <i class="bi bi-caret-right-fill"></i>
+                        Következő sorok
+                    </button>
+                    <input type="number" class="form-control border-light" min="1" max="999" size="3">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-auto">
+                <div class="d-grid gap-2">
+                    <button id="redo" class="btn btn-outline-light text-start d-block">
+                        <i class="bi bi-arrow-clockwise"></i>
+                        Ismét
+                    </button>
+                    <button id="undo" class="btn btn-outline-light text-start d-block">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        Visszavonás
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-auto">
+                <div class="d-grid gap-2">
+                    <button id="nextSlide" class="btn btn-outline-light text-start">
+                        <i class="bi bi-skip-forward-fill"></i>
+                        Következő dia
+                    </button>
+                    <button id="prevSlide" class="btn btn-outline-light text-start">
+                        <i class="bi bi-skip-backward-fill"></i>
+                        Előző dia
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
