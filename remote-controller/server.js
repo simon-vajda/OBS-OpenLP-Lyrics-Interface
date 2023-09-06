@@ -4,7 +4,7 @@ import pino from "pino";
 import { Server } from "socket.io";
 
 const PORT = 5000;
-const DEFAULT_LINE_COUNT = 4;
+const DEFAULT_LINE_COUNT = 2;
 
 export const logger = pino({
   transport: {
