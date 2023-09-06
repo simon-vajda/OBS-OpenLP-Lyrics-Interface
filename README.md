@@ -23,7 +23,8 @@
 
 ## Használat
 
-- Amikor megnyitod az OBS-t, akkor a Böngésző forrás és a Dokk csatlakozni fog az OpenLP-hez és a Távirányítóhoz., ezért fontos, hogy az **OBS-t indítsd el utoljára a 3 program közül!**
+- A Távirányító programot ugyanazon a gépen kell futtatni mint az OBS-t. A webes felületet viszont már másik számítógépről is lehet használni.
+- Amikor megnyitod az OBS-t, akkor a Böngésző forrás és a Dokk csatlakozni fog az OpenLP-hez és a Távirányítóhoz, ezért fontos, hogy az **OBS-t indítsd el utoljára a 3 program közül!**
 - Ha nem fut a távirányító szerver az OBS indításakor, akkor kis időn belül egy figyelmeztető üzenetet jelenít meg erről. A távirányító indítását követően újra kell tölteni a böngésző forrást OBS-ben ahhoz, hogy csatlakozni tudjon. Ezt úgy tudod elvégezni, hogy kijelölöd a böngésző forrást és ennek hatására megjelenik egy `Frissítés` gomb az előnézet alatt. Ezt megnyomva lefrissíti a színpadi nézetet.
 
 ## Hasznos beállítások
@@ -31,3 +32,15 @@
 - Az OBS dokkon sok hasznos beállítás van. Ha azt szeretnéd, hogy dia léptetésnél automatikusan megjelenítse a következő sorokat OBS-ben, akkor pipáld be az `Auto-update text on slide change` opciót.
 - Az `Auto-hide when blank screen displayed` bekapcsolását követően pedig szinkronban lesz, hogy amikor elrejted a képernyőt OpenLP-ben, akkor OBS-ben is eltűnik a szöveg.
 - A távirányító webes felülethez létrehozhatsz egy Chrome parancsikont. Így külön alkalmazásként fog megjelenni a Start menüben és amikor megnyitod, külön ikonja lesz a tálcán. Ezt úgy érheted el, hogy Chrome-ban amikor megnyitottad az oldalt `Három pont a jobb felső sarokban -> További eszközök -> Parancsikon létrehozása`. Ekkor létrehozza az ikont, viszont még nem saját ablakban nyitja meg az oldalt. Navigálj a `chrome://apps/` linkre, majd jobb klikk a létrehozott parancsikonra és pipáld be a `Megnyitás ablakban` opciót. Ha később eltávolítani szeretnéd a parancsikont, azt is itt tudod megtenni.
+
+## Távirányító HTTP végpontok (Companion)
+
+A Companion segítségével beállítható, hogy egy StreamDeck-ről irányítsd az OBS és OpenLP vetítést. A szerver az alábbi HTTP végpontokat figyeli az `5000`-es porton. (Pl.: `http://localhost:5000/nextSlide` HTTP kérés a következő diát jeleníti meg. Ha másik számítógépről szeretnéd vezérelni, mint amin a távirányító szerver és az OBS fut, akkor az adott gép IP címét használd a localhost helyén)
+
+- `GET` `/displayNext`
+  - Opcionális paraméter: `lineCount` (Alapértelmezett érték: 2)
+  - Pl.: `/displayNext?lineCount=3` (Következő 3 sor megjelenítése)
+- `GET` `/undoDisplay`
+- `GET` `/redoDisplay`
+- `GET` `/nextSlide`
+- `GET` `/prevSlide`
